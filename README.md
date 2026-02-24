@@ -1,5 +1,5 @@
 
-# Smart Task Manager (Backend Only)
+# Smart Task Manager
 
 A fully custom **Node.js backend project** built without Express — using only the core **HTTP module**, custom routing, a controller/service architecture, and JSON file storage (with a planned upgrade to MongoDB). This project demonstrates real backend engineering principles, clean architecture, and professional code organization.
 
