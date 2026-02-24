@@ -1,32 +1,37 @@
 import fs from 'node:fs'
-import { backup } from 'node:sqlite';
+import { backup, DatabaseSync } from 'node:sqlite';
 
 export function print(){
-    try {
     let data = new Array() ;
+    try {
     data = JSON.parse(fs.readFileSync('./data/data.json','utf-8'));
     if (data == [] ) throw e; 
     } catch (e){
         if (e){
-
             data = backup();
             console.log("the data have been imported from back_up file ");
-            
         }
     }
-    
-    return JSON.stringify(data , null );
+
+    // return data ;
+    try {
+    return JSON.stringify(data , null , 2.5);
+    } catch (e) {
+        return "404" ;
+    }
     
 }
 
-export function printByid(id){
 
+export function printByid(id){
+    
     let data = new Array() ;
     try {
-    data = JSON.parse(fs.readFileSync('./data/data.json','utf-8'));
+        data = JSON.parse(fs.readFileSync('./data/data.json','utf-8'));
     if ( data == [] ) throw e ;
-    } catch (e){
+    } catch (e) {
         if (e){
+
 
             data = backup();
             console.log("the data have been imported from back_up file ");
@@ -38,8 +43,9 @@ export function printByid(id){
             return JSON.stringify(e);
         }
     }
+    
+}
+}
 
-}
-}
 
 export default { print , printByid }
