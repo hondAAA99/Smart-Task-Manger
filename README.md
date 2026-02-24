@@ -107,7 +107,7 @@ This project was created to practice real backend engineering skills:
 1. Clone the repository:
 
 ```
-git clone <your-repo-link>
+git clone https://github.com/hondAAA99/Smart-Task-Manger.git
 ```
 
 2. Install dependencies:
